@@ -22,14 +22,26 @@
 
 </head>
 
-<body>
-    <div id="app">
-        <ul>
-            <li v-for="task in tasks">
-                {{task.text}}
-            </li>
-        </ul>
+<body class="vh-100 d-flex justify-content-center align-items-center">
+    <div class="container h-50 d-flex justify-content-center align-items-center bg-primary">
+        <div id="app">
+            <h1 class="text-center">Todo List</h1>
+            <ul class="list-group">
+                <li v-for="task in tasks" class="list-group-item">{{task.text}}</li>
+            </ul>
+            <div class="input-group mb-3">
+                <form class="my-3" action="">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Inserisci elemento..."
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary border-warning text-warning" type="button"
+                            id="button-addon2">Inserisci</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+
 
 </body>
 
