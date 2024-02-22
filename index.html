@@ -30,12 +30,12 @@
                 <li v-for="task in tasks" class="list-group-item">{{task.text}}</li>
             </ul>
             <div class="input-group mb-3">
-                <form class="my-3" action="api/index.php" method="post" name="task">
+                <form @submit.prevent="addTask" class="my-3" action="api/index.php" method="post" name="task">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Inserisci elemento..."
-                            aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary border-warning text-warning" type="submit"
-                            id="button-addon2">Inserisci</button>
+                        <input v-model="newTask.text" type="text" class="form-control"
+                            placeholder="Inserisci elemento...">
+                        <button class="btn btn-outline-secondary border-warning text-warning"
+                            type="submit">Inserisci</button>
                     </div>
                 </form>
             </div>
