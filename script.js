@@ -4,11 +4,7 @@ const app = createApp({
     data: () => ({
         tasks: [],
 
-        newTask: {
-            "id": 5,
-            "text": "",
-            "done": false
-        }
+        newTask: ''
 
 
     }),
@@ -17,6 +13,7 @@ const app = createApp({
             const data = { 'task': this.newTask }
             const config = { headers: { 'Content-Type': 'multipart/form-data' } }
             axios.post(endpoint, data, config)
+
 
         }
     },

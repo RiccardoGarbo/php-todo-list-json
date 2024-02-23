@@ -30,10 +30,9 @@
                 <li v-for="task in tasks" class="list-group-item">{{task.text}}</li>
             </ul>
             <div class="input-group mb-3">
-                <form @submit.prevent="addTask" class="my-3" action="api/index.php" method="post" name="task">
+                <form @submit.prevent="addTask" class="my-3" action="api/index.php" method="POST" name="task">
                     <div class="input-group mb-3">
-                        <input v-model="newTask.text" type="text" class="form-control"
-                            placeholder="Inserisci elemento...">
+                        <input v-model="newTask" type="text" class="form-control" placeholder="Inserisci elemento...">
                         <button class="btn btn-outline-secondary border-warning text-warning"
                             type="submit">Inserisci</button>
                     </div>

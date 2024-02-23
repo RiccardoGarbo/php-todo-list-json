@@ -8,12 +8,16 @@ $data_json = file_get_contents($path);
 $tasks = $data_json;
 
 
-$new_task = $_POST['task'] ?? '';
+$task_text = $_POST['task'] ?? '';
 
-if($new_task) {
-    $new_task = json_decode($new_task);
 
+if($task_text) {
+    
     $tasks = json_decode($tasks , true);
+    
+    $new_task = [ 'done' => false,
+    'text' => $task_text,
+    'id' => uniqid() ];
     
     $tasks[] = $new_task;
     
